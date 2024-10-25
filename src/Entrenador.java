@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author emili
@@ -60,5 +60,16 @@ public class Entrenador extends Persona{
         this.genero = genero;
     }
     
-    
+    public void ingresarUsuario(){
+        nombre = JOptionPane.showInputDialog(null,"Ingresa tu nombre de usuario!");
+        edad = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa tu edad"));
+        genero = JOptionPane.showInputDialog(null,"Ingresa tu genero");
+        JOptionPane.showMessageDialog(null, "Bienvenido "+nombre+"!!!");
+        JOptionPane.showMessageDialog(null, "Te convertiras en el mejor Maestro Pokemon, te lo aseguro!!!");
+        tipo = "Entrenador Pokemon";
+        rango = 1;
+        JOptionPane.showMessageDialog(null, "Por el momento eres un "+tipo+" rango "+rango);
+        JOptionPane.showMessageDialog(null, "Vive esta aventura y conviertete en el mejor Maestro Pokemon");
+        JOptionPane.showMessageDialog(null, "Adelante!!");
+    }
 }
