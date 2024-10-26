@@ -20,6 +20,7 @@ public class Pokemon{
     protected String tipo;
     protected int numeroPokedex;
     protected int ataque;
+    boolean estado;
 
     public Pokemon(String nombre, double peso, double altura, int nivel, int vida, String tipo, int numeroPokedex, int ataque) {
         this.nombre = nombre;
@@ -121,7 +122,7 @@ public class Pokemon{
         System.out.println("Nivel: " + nivel);
     }
     
-    public void batalla(){
+    public boolean batalla(){
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         
@@ -133,7 +134,7 @@ public class Pokemon{
             new Pokemon("Pikachu", 6.0, 0.4, 5, 100, "Eléctrico", 25, 20)
         };  
         
-        // Mostrar la lista de Pokémon
+        // Mostrar la lista de Pokemon
         System.out.println("Elige tu Pokemon:");
         for (int i = 0; i < pokemones.length; i++) {
             System.out.println((i + 1) + ". " + pokemones[i]);
@@ -160,9 +161,9 @@ public class Pokemon{
 
             if (!pokemonRival.estaVivo()) {
                 System.out.println(pokemonRival.getNombre() + " ha sido derrotado. Ganaste!!");
+                estado = true;
                 break;
             }
-            
             // El rival ataca
             pokemonUsuario.recibirDaño(pokemonRival.getAtaque());
             System.out.println(pokemonRival.getNombre() + " ataca a " + pokemonUsuario.getNombre() + " causando " + pokemonRival.getAtaque() + " de daño.");
@@ -170,8 +171,10 @@ public class Pokemon{
 
             if (!pokemonUsuario.estaVivo()) {
                 System.out.println(pokemonUsuario.getNombre() + " ha sido derrotado. Perdiste!!");
+                estado = false;
             }
         }
         scanner.close();
+        return estado;
     }
 }
