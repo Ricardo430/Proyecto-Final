@@ -25,10 +25,36 @@ public class ProyectoFinal {
         System.out.println("Bienvenido!!!");
         
         Entrenador entrenador = new Entrenador();
+        
         // Agregar Pokemon a la Pokedex
-//        miPokedex.agregarPokemon(pikachu);
-//        miPokedex.agregarPokemon(charmander);
+        miPokedex.agregarPokemon(bulbasaur);
+        miPokedex.agregarPokemon(squirtle);
+        miPokedex.agregarPokemon(charmander);
+        miPokedex.agregarPokemon(pikachu);
+        
+        //Ingreso de usuario
         entrenador.ingresarUsuario();
+        
+        System.out.println("Hora de elegir tu primer Pokemon!!!");
+        System.out.println("1.Bulvasaur  2.Charmander  3.Squirtle");
+        
+        int eleccion;
+        eleccion = Integer.parseInt(JOptionPane.showInputDialog(null,"Elige tu Pokemon"));
+        
+        switch(eleccion){
+            case 1:
+                JOptionPane.showMessageDialog(null, "Pokemon seleccionado: Bulbasaur");
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(null, "Pokemon seleccionado: Charmander");
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(null, "Pokemon seleccionado: Squirtle");
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Opcion invalida");
+                break;
+        }
         
         // Listar Pokemon
         miPokedex.listarPokemones();
