@@ -1,6 +1,6 @@
 
+import javax.swing.JOptionPane;
 import java.util.Random;
-import java.util.Scanner;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -124,7 +124,6 @@ public class Pokemon{
     
     public boolean batalla(){
         Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
         
         // Crear una lista de Pokémon
         Pokemon[] pokemones = {
@@ -142,7 +141,8 @@ public class Pokemon{
         
         // Elegir Pokémon del usuario
         System.out.print("Ingresa el numero de tu Pokemon: ");
-        int eleccionUsuario = scanner.nextInt() - 1;
+        int eleccionUsuario = Integer.parseInt(JOptionPane.showInputDialog(null,"Numero"));
+        eleccionUsuario = eleccionUsuario -1;
         Pokemon pokemonUsuario = pokemones[eleccionUsuario];
         
         // Elegir Pokémon de la máquina
@@ -174,7 +174,6 @@ public class Pokemon{
                 estado = false;
             }
         }
-        scanner.close();
         return estado;
     }
 }
