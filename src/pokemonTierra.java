@@ -9,8 +9,8 @@
  */
 public class pokemonTierra extends Pokemon{
 
-    public pokemonTierra(String nombre, double peso, double altura, int nivel, int vida, String tipo, int numeroPokedex) {
-        super(nombre, peso, altura, nivel, vida, tipo, numeroPokedex);
+    public pokemonTierra(String nombre, double peso, double altura, int nivel, int vida, String tipo, int numeroPokedex, int ataque) {
+        super(nombre, peso, altura, nivel, vida, tipo, numeroPokedex, ataque);
     }
 
     public pokemonTierra() {
@@ -44,6 +44,10 @@ public class pokemonTierra extends Pokemon{
         return numeroPokedex;
     }
 
+    public int getAtaque() {
+        return ataque;
+    }
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -70,6 +74,10 @@ public class pokemonTierra extends Pokemon{
 
     public void setNumeroPokedex(int numeroPokedex) {
         this.numeroPokedex = numeroPokedex;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
     }
     
     public void atacar (){}

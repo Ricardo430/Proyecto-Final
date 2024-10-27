@@ -28,7 +28,7 @@ public class Entrenador extends Persona{
         return rango;
     }
 
-    public String getNombre() {
+    public String getNombres() {
         return nombre;
     }
 
